@@ -12,7 +12,7 @@ protocol IGenresListView {
 }
 
 struct GenresListViewModel {
-    let list: [Genre]
+    let list: [GenreCellController]
 }
 
 final class GenresListPresenter {
@@ -26,11 +26,19 @@ final class GenresListPresenter {
 }
 
 extension GenresListPresenter: GenresViewControllerDelegate {
-    
+
     func didRequestToRefreshList() {
         loader.load { [weak self] result in
+            guard let self = self else { return }
+            
             let list = (try? result.get()) ?? []
-            self?.view.display(.init(list: list))
+            let controllers: [GenreCellController] = list.map { genre in
+                let cellVC = GenreCellController()
+                let cellPresenter = GenreItemPresenter(view: cellVC, genre: genre)
+                cellVC.delegate = cellPresenter
+                return cellVC
+            }
+            self.view.display(.init(list: controllers))
         }
     }
 }

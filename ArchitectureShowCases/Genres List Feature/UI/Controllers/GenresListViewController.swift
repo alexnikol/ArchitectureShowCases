@@ -12,10 +12,10 @@ protocol GenresViewControllerDelegate {
 }
 
 final class GenresListViewController: UITableViewController {
-    private let genreCellID = "GenreUICell"
+    
     var delegate: GenresViewControllerDelegate?
     
-    private var tableModel = [Genre]() {
+    private var tableModel = [GenreCellController]() {
         didSet { tableView.reloadData() }
     }
 
@@ -23,7 +23,6 @@ final class GenresListViewController: UITableViewController {
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.register(GenreUICell.self, forCellReuseIdentifier: genreCellID)
         delegate?.didRequestToRefreshList()
     }
     
@@ -32,16 +31,7 @@ final class GenresListViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: genreCellID, for: indexPath) as! GenreUICell
-        let viewModel = tableModel[indexPath.row]
-        cell.textLabel?.text = viewModel.title
-        cell.didTap = {
-            let alert = UIAlertController(title: viewModel.title, message: viewModel.cursor.uuidString, preferredStyle: .alert)
-            let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-            alert.addAction(action)
-            self.present(alert, animated: true, completion: nil)
-        }
-        return cell
+        return tableModel[indexPath.row].view(in: tableView)
     }
 }
 

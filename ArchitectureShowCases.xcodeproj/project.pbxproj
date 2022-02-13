@@ -16,6 +16,8 @@
 		8DB9077C27B8FC5C008CD192 /* GenreUICell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB9077B27B8FC5C008CD192 /* GenreUICell.swift */; };
 		8DB9078127B8FD32008CD192 /* GenresListUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB9078027B8FD32008CD192 /* GenresListUIComposer.swift */; };
 		8DB9078327B8FF11008CD192 /* GenresListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB9078227B8FF11008CD192 /* GenresListPresenter.swift */; };
+		8DB9078527B90542008CD192 /* GenreCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB9078427B90542008CD192 /* GenreCellController.swift */; };
+		8DB9078727B90E6C008CD192 /* GenreItemPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB9078627B90E6C008CD192 /* GenreItemPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		8DB9077B27B8FC5C008CD192 /* GenreUICell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreUICell.swift; sourceTree = "<group>"; };
 		8DB9078027B8FD32008CD192 /* GenresListUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresListUIComposer.swift; sourceTree = "<group>"; };
 		8DB9078227B8FF11008CD192 /* GenresListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresListPresenter.swift; sourceTree = "<group>"; };
+		8DB9078427B90542008CD192 /* GenreCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCellController.swift; sourceTree = "<group>"; };
+		8DB9078627B90E6C008CD192 /* GenreItemPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreItemPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				8DB9078227B8FF11008CD192 /* GenresListPresenter.swift */,
+				8DB9078627B90E6C008CD192 /* GenreItemPresenter.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 		8DB9077E27B8FD07008CD192 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8DB9078427B90542008CD192 /* GenreCellController.swift */,
 				8DB9077427B8FA4A008CD192 /* GenresListViewController.swift */,
 			);
 			path = Controllers;
@@ -208,6 +214,8 @@
 				8DB9076027B8F447008CD192 /* AppDelegate.swift in Sources */,
 				8DB9077A27B8FAE3008CD192 /* GenresProvider.swift in Sources */,
 				8DB9076227B8F447008CD192 /* SceneDelegate.swift in Sources */,
+				8DB9078527B90542008CD192 /* GenreCellController.swift in Sources */,
+				8DB9078727B90E6C008CD192 /* GenreItemPresenter.swift in Sources */,
 				8DB9077C27B8FC5C008CD192 /* GenreUICell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
