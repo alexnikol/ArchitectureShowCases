@@ -22,13 +22,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func makeRootViewController() -> UIViewController {
         let tabBar = UITabBarController()
-        tabBar.viewControllers = [genres()]
+        tabBar.viewControllers = [GenresListUIComposer.createModule()]
         return tabBar
-    }
-    
-    private func genres() -> UIViewController {
-        let vc = UIViewController()
-        vc.view.backgroundColor = .red
-        return vc
     }
 }
